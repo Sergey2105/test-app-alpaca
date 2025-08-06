@@ -6,7 +6,7 @@ export default defineConfig({
       scss: {},
     },
   },
-  base: "/test-app-alpaca",
+  base: "/test-app-alpaca/",
   server: {
     host: true,
   },
