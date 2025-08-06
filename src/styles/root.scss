@@ -1,0 +1,32 @@
+body,
+.main {
+  font-family: "Roboto", sans-serif;
+}
+:root,
+.theme-light {
+  --color-white: rgb(255, 255, 255);
+  --color-calendar-btn: rgb(255, 255, 255, 0.2);
+  --color-calendar-bg: rgba(19, 20, 23, 0.898);
+  --color-calendar-btn-icon: rgba(217, 217, 217, 1);
+  --color-calendar-date: rgba(255, 255, 255, 1);
+  --color-calendar-date-inactive: rgba(255, 255, 255, 0.5);
+  --color-calendar-date-text-current: rgba(0, 0, 0, 1);
+  --color-calendar-date-circle-current: rgba(255, 255, 255);
+  --color-calendar-date-circle-small-current: rgba(19, 20, 23, 0.3);
+  --color-calendar-date-circle-small-border-current: rgba(19, 20, 23, 0.1);
+  --color-calendar-date-line: rgba(255, 255, 255);
+}
+
+.theme-dark {
+  --color-white: rgb(255, 255, 255);
+  --color-calendar-btn: rgba(38, 116, 161, 0.2);
+  --color-calendar-bg: rgba(19, 20, 23, 0.898);
+  --color-calendar-btn-icon: rgba(217, 217, 217, 1);
+  --color-calendar-date: rgba(255, 255, 255, 1);
+  --color-calendar-date-inactive: rgba(255, 255, 255, 0.5);
+  --color-calendar-date-text-current: rgba(255, 255, 255, 1);
+  --color-calendar-date-circle-current: rgba(45, 156, 219, 1);
+  --color-calendar-date-circle-small-current: rgba(19, 20, 23, 0.3);
+  --color-calendar-date-circle-small-border-current: rgba(19, 20, 23, 0.1);
+  --color-calendar-date-line: rgba(45, 156, 219, 1);
+}

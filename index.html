@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Alpaca App</title>
+  </head>
+  <body>
+    <div class="main">
+      <button id="theme-toggle" class="btn btn_theme"></button>
+      <div class="calendar">
+        <div class="calendar__controller">
+          <button class="calendar__btn">
+            <svg
+              width="32"
+              height="32"
+              viewBox="0 0 32 32"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M20 11.4L18.4865 10L12 16L18.4865 22L20 20.6L15.027 16L20 11.4Z"
+                fill="white"
+              />
+            </svg>
+          </button>
+          <span class="calendar__month">январь</span>
+          <button class="calendar__btn">
+            <svg
+              width="32"
+              height="32"
+              viewBox="0 0 32 32"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M12 11.4L13.5135 10L20 16L13.5135 22L12 20.6L16.973 16L12 11.4Z"
+                fill="white"
+              />
+            </svg>
+          </button>
+        </div>
+        <div class="calendar__dates" id="calendar"></div>
+      </div>
+    </div>
+    <script type="module" src="/src/js/main.js"></script>
+  </body>
+</html>
