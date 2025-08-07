@@ -83,8 +83,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 32px;
-    height: 32px;
+    // height: 100%;
+    // width: 100%;
     padding: 0;
     background-color: transparent;
     border: none;
@@ -186,16 +186,42 @@
     }
   }
 }
-.q::after {
+
+.q_start {
+  position: relative;
+}
+.q_start::before {
   content: "";
-  width: calc(100% + 16px);
+  width: 16px;
   background-color: var(--color-calendar-date-line);
   position: absolute;
   top: 0;
-  right: 0;
+  left: -8px;
   height: 100%;
   z-index: -1;
+  background: linear-gradient(
+    90deg,
+    var(--color-calendar-date-line) 50%,
+    transparent 50%
+  );
+  pointer-events: none;
 }
-.q-main {
+.q_end {
   position: relative;
+}
+.q_end::before {
+  content: "";
+  width: 16px;
+  background-color: var(--color-calendar-date-line);
+  position: absolute;
+  top: 0;
+  right: -8px;
+  height: 100%;
+  z-index: -1;
+  background: linear-gradient(
+    90deg,
+    transparent 50%,
+    var(--color-calendar-date-line) 50%
+  );
+  pointer-events: none;
 }

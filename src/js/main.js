@@ -34,6 +34,9 @@ const resetCalendar = () => {
       currentWrapper.classList.remove("calendar__date_range");
       currentWrapper.classList.remove("calendar__date_start");
       currentWrapper.classList.remove("calendar__date_end");
+
+      currentWrapper.classList.remove("q_start");
+      currentWrapper.classList.remove("q_end");
     }
   });
 };
@@ -69,6 +72,45 @@ const changeDate = (day, btn, wrapper) => {
           const currentWrapper = date.parentElement;
           date.classList.add("calendar__date_range_btn");
           currentWrapper.classList.add("calendar__date_range");
+          /////////
+
+          const rangeButtons = [
+            ...document.querySelectorAll(
+              ".calendar__date_current, .calendar__date_range_btn"
+            ),
+          ];
+
+          const first = rangeButtons[0];
+          const firstDay = parseInt(first?.dataset.day, 10);
+
+          if (
+            first?.classList.contains("calendar__date_current") &&
+            (firstDay - 1) % 7 === 0
+          ) {
+            rangeButtons.shift();
+          }
+
+          const last = rangeButtons[rangeButtons.length - 1];
+          const lastDay = parseInt(last?.dataset.day, 10);
+          if (
+            last?.classList.contains("calendar__date_current") &&
+            lastDay % 7 === 0
+          ) {
+            rangeButtons.pop();
+          }
+
+          ////////////
+
+          rangeButtons.forEach((btn) => {
+            const day = parseInt(btn.dataset.day);
+            const wrapper = btn.parentElement;
+
+            const isLeftEdge = (day - 1) % 7 === 0;
+            const isRightEdge = day % 7 === 0;
+
+            if (isLeftEdge) wrapper.classList.add("q_start");
+            if (isRightEdge) wrapper.classList.add("q_end");
+          });
         }
       });
     }
