@@ -28,15 +28,15 @@ const resetCalendar = () => {
 
   document.querySelectorAll(".calendar__date").forEach((day) => {
     day.classList.remove("calendar__date_current");
-    day.classList.remove("calendar__date_range_btn");
+    day.classList.remove("calendar__date_range-btn");
     const currentWrapper = day.parentElement;
     if (currentWrapper) {
       currentWrapper.classList.remove("calendar__date_range");
       currentWrapper.classList.remove("calendar__date_start");
       currentWrapper.classList.remove("calendar__date_end");
 
-      currentWrapper.classList.remove("q_start");
-      currentWrapper.classList.remove("q_end");
+      currentWrapper.classList.remove("calendar__date_range_start");
+      currentWrapper.classList.remove("calendar__date_range_end");
     }
   });
 };
@@ -65,18 +65,16 @@ const changeDate = (day, btn, wrapper) => {
       if (startWrapper) {
         startWrapper.classList.add("calendar__date_start");
       }
-
       document.querySelectorAll(".calendar__date").forEach((date) => {
         const currentDay = parseInt(date.dataset.day);
         if (currentDay > startDate && currentDay < endDate) {
           const currentWrapper = date.parentElement;
-          date.classList.add("calendar__date_range_btn");
+          date.classList.add("calendar__date_range-btn");
           currentWrapper.classList.add("calendar__date_range");
-          /////////
 
           const rangeButtons = [
             ...document.querySelectorAll(
-              ".calendar__date_current, .calendar__date_range_btn"
+              ".calendar__date_current, .calendar__date_range-btn"
             ),
           ];
 
@@ -99,8 +97,6 @@ const changeDate = (day, btn, wrapper) => {
             rangeButtons.pop();
           }
 
-          ////////////
-
           rangeButtons.forEach((btn) => {
             const day = parseInt(btn.dataset.day);
             const wrapper = btn.parentElement;
@@ -108,8 +104,8 @@ const changeDate = (day, btn, wrapper) => {
             const isLeftEdge = (day - 1) % 7 === 0;
             const isRightEdge = day % 7 === 0;
 
-            if (isLeftEdge) wrapper.classList.add("q_start");
-            if (isRightEdge) wrapper.classList.add("q_end");
+            if (isLeftEdge) wrapper.classList.add("calendar__date_range_start");
+            if (isRightEdge) wrapper.classList.add("calendar__date_range_end");
           });
         }
       });

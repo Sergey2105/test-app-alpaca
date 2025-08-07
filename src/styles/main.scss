@@ -5,7 +5,7 @@
   align-items: center;
   gap: 20px;
   width: 100%;
-  height: 100vh;
+  height: 100svh;
   max-width: 560px;
   min-width: 240px;
   margin: 0 auto;
@@ -16,11 +16,10 @@
   background-color: rgba(0, 0, 0, 1);
   color: var(--color-white);
   border-radius: 8px;
-  height: 36px;
-  width: 36px;
-  padding: 0;
+  padding: 22px;
   &_theme {
     background-image: url("/light.svg");
+    background-repeat: no-repeat;
     background-position: center;
   }
   @media (hover: hover) {
@@ -44,6 +43,7 @@
   background-image: url("/alpaca.png");
   background-repeat: no-repeat;
   background-size: cover;
+  background-position: center;
   width: 100%;
   min-width: 240px;
   max-width: 560px;
@@ -83,8 +83,6 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    // height: 100%;
-    // width: 100%;
     padding: 0;
     background-color: transparent;
     border: none;
@@ -180,48 +178,55 @@
     }
     &_range {
       background-color: var(--color-calendar-date-line);
-    }
-    &_range_btn {
-      color: var(--color-calendar-date-text-current);
+      &_start {
+        position: relative;
+      }
+      &_start::before {
+        content: "";
+        width: 16px;
+        background-color: var(--color-calendar-date-line);
+        position: absolute;
+        top: 0;
+        left: -8px;
+        height: 100%;
+        z-index: -1;
+        background: linear-gradient(
+          90deg,
+          var(--color-calendar-date-line) 50%,
+          transparent 50%
+        );
+        pointer-events: none;
+      }
+      &_end {
+        position: relative;
+      }
+      &_end::before {
+        content: "";
+        width: 16px;
+        background-color: var(--color-calendar-date-line);
+        position: absolute;
+        top: 0;
+        right: -8px;
+        height: 100%;
+        z-index: -1;
+        background: linear-gradient(
+          90deg,
+          transparent 50%,
+          var(--color-calendar-date-line) 50%
+        );
+        pointer-events: none;
+      }
+      &-btn {
+        color: var(--color-calendar-date-text-current);
+      }
     }
   }
 }
-
-.q_start {
-  position: relative;
-}
-.q_start::before {
-  content: "";
-  width: 16px;
-  background-color: var(--color-calendar-date-line);
-  position: absolute;
-  top: 0;
-  left: -8px;
-  height: 100%;
-  z-index: -1;
-  background: linear-gradient(
-    90deg,
-    var(--color-calendar-date-line) 50%,
-    transparent 50%
-  );
-  pointer-events: none;
-}
-.q_end {
-  position: relative;
-}
-.q_end::before {
-  content: "";
-  width: 16px;
-  background-color: var(--color-calendar-date-line);
-  position: absolute;
-  top: 0;
-  right: -8px;
-  height: 100%;
-  z-index: -1;
-  background: linear-gradient(
-    90deg,
-    transparent 50%,
-    var(--color-calendar-date-line) 50%
-  );
-  pointer-events: none;
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
