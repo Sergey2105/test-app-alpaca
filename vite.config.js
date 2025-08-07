@@ -1,7 +1,7 @@
 import { defineConfig } from "vite";
 
 export default defineConfig({
-  base: "/test-app-alpaca",
+  base: "/test-app-alpaca/",
   server: {
     host: true,
   },
