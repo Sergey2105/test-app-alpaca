@@ -1,6 +1,6 @@
-import "../styles/root.scss";
-import "../styles/main.scss";
-import "../styles/normalize.scss";
+import "./styles/root.scss";
+import "./styles/main.scss";
+import "./styles/normalize.scss";
 
 const buttonToggle = document.getElementById("theme-toggle");
 
