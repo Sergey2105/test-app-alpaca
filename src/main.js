@@ -57,7 +57,6 @@ const changeDate = (day, btn, wrapper) => {
       endDate = day;
       btn.classList.add("calendar__date_current");
       wrapper.classList.add("calendar__date_end");
-
       const startBtn = document.querySelector(
         `.calendar__date[data-day="${startDate}"]`
       );

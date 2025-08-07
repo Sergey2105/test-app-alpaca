@@ -45,8 +45,6 @@
   background-size: cover;
   background-position: center;
   width: 100%;
-  min-width: 240px;
-  max-width: 560px;
   border-radius: 6px;
   &::after {
     content: "";
@@ -132,9 +130,9 @@
     border-radius: 50%;
     height: 100%;
     width: 100%;
-    min-width: 24px;
+    min-width: 32px;
     max-width: 36px;
-    min-height: 24px;
+    min-height: 32px;
     max-height: 36px;
     aspect-ratio: 1/1;
     &_active {
@@ -220,13 +218,5 @@
         color: var(--color-calendar-date-text-current);
       }
     }
-  }
-}
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
   }
 }
