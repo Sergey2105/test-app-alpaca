@@ -256,6 +256,6 @@
 
 .calendar__date_range.calendar__date_range_start::after,
 .calendar__date_range.calendar__date_range_end::after {
-  animation: none !important;
-  opacity: 1 !important;
+  animation: none;
+  opacity: 1;
 }
