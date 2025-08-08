@@ -65,7 +65,7 @@ const changeDate = (day, btn, wrapper) => {
         startWrapper.classList.add("calendar__date_start");
       }
       document.querySelectorAll(".calendar__date").forEach((date) => {
-        const currentDay = parseInt(date.dataset.day);
+        const currentDay = parseInt(date.dataset.day, 10);
         if (currentDay > startDate && currentDay < endDate) {
           const currentWrapper = date.parentElement;
           date.classList.add("calendar__date_range-btn");
@@ -99,7 +99,7 @@ const changeDate = (day, btn, wrapper) => {
       }
 
       rangeButtons.forEach((btn) => {
-        const day = parseInt(btn.dataset.day);
+        const day = parseInt(btn.dataset.day, 10);
         const wrapper = btn.parentElement;
 
         const isLeftEdge = (day - 1) % 7 === 0;
